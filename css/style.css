@@ -1,0 +1,597 @@
+/* ==========================================================================
+   Pierrot 貝潔得 — HK Landing Page
+   Design tokens sourced from brand visual guideline (v1.0)
+   ========================================================================== */
+
+:root{
+  --navy:      #1B2A6B;   /* Primary */
+  --blue:      #1E5FA6;   /* Secondary */
+  --sky:       #4FC3F7;   /* Tertiary */
+  --tint:      #EAF4FC;   /* Tint */
+  --tint-border:#B9DDF5;
+  --white:     #FFFFFF;
+  --body:      #4A5568;
+  --muted:     #94A0B8;
+  --line:      #E4E9F2;
+  --leaf:      #4F8A3E;   /* Leaf accent — badge icon only */
+  --spain-red: #C60B1E;   /* Flag icon only */
+  --spain-yellow:#FFC400; /* Flag icon only */
+  --rose:      #C4587F;   /* Sensitive tag only — echoes product photography */
+
+  --radius-pill: 999px;
+  --radius-card: 12px;
+  --radius-btn:  8px;
+
+  --shadow-soft: 0 12px 28px -14px rgba(27,42,107,.28);
+  --shadow-lift: 0 18px 36px -16px rgba(27,42,107,.38);
+
+  --container: 1180px;
+  --header-h: 76px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; scroll-padding-top: calc(var(--header-h) + 12px); }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+}
+
+body{
+  margin:0;
+  font-family:'Noto Sans TC', -apple-system, 'PingFang HK', 'Microsoft JhengHei', sans-serif;
+  color:var(--navy);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+h1,h2,h3,p{ margin:0; }
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ margin:0; padding:0; list-style:none; }
+
+.skip-link{
+  position:absolute; left:-999px; top:0;
+  background:var(--navy); color:#fff; padding:10px 16px; z-index:1000;
+  border-radius:0 0 8px 0;
+}
+.skip-link:focus{ left:0; }
+
+:focus-visible{ outline:2.5px solid var(--sky); outline-offset:3px; }
+
+.section-inner{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 clamp(20px, 5vw, 48px);
+}
+
+.icon{ width:1em; height:1em; display:block; }
+
+/* --------------------------------------------------------------------
+   Shared: eyebrow / heading / lead / divider
+   -------------------------------------------------------------------- */
+.section-divider{
+  width:48px; height:3px; border-radius:3px;
+  background:var(--sky);
+  margin:0 0 18px;
+}
+.promise-inner .section-divider,
+.trust > .section-inner > .section-divider{ margin-inline:auto; }
+
+.eyebrow{
+  font-size:13px; font-weight:700; letter-spacing:.12em;
+  color:var(--blue); text-transform:uppercase;
+  margin-bottom:10px;
+}
+h2{
+  font-size:clamp(1.6rem, 3.4vw, 2.15rem);
+  font-weight:900; color:var(--navy); line-height:1.3;
+  letter-spacing:-.01em;
+  margin-bottom:14px;
+}
+.section-lead{
+  font-size:16px; line-height:1.75; color:var(--body);
+  max-width:640px; margin-bottom:0;
+}
+
+section{ padding:88px 0; }
+@media (max-width:768px){ section{ padding:64px 0; } }
+
+/* --------------------------------------------------------------------
+   Badges (per guideline 2.1 / 2.2)
+   -------------------------------------------------------------------- */
+.badge-row{ display:flex; gap:9px; flex-wrap:wrap; margin-bottom:18px; }
+.badge{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:6px 13px 6px 10px; border-radius:var(--radius-pill);
+  font-size:13px; font-weight:500; white-space:nowrap;
+}
+.badge .icon{ font-size:15px; }
+.badge-leaf{
+  background:var(--tint); border:.5px solid var(--tint-border); color:var(--navy);
+}
+.badge-spain{ background:var(--navy); color:#fff; padding-left:9px; }
+.flag-chip{
+  display:inline-block; width:18px; height:12px; border-radius:2px;
+  background:linear-gradient(to bottom,
+    var(--spain-red) 0 25%, var(--spain-yellow) 25% 75%, var(--spain-red) 75% 100%);
+  box-shadow:0 0 0 .5px rgba(255,255,255,.25) inset;
+}
+.badge-row-lg .badge{ padding:8px 18px 8px 14px; font-size:15px; }
+.badge-row-lg .badge .icon{ font-size:18px; }
+.badge-row-lg .flag-chip{ width:22px; height:15px; }
+
+/* --------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:13px 26px; border-radius:var(--radius-btn);
+  font-size:15px; font-weight:500; letter-spacing:.01em;
+  border:1.5px solid transparent; cursor:pointer;
+  transition:transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease;
+}
+.btn-primary{ background:var(--navy); color:#fff; }
+.btn-primary:hover{ background:var(--blue); transform:translateY(-2px); box-shadow:var(--shadow-lift); }
+.btn-outline{ background:#fff; border-color:var(--navy); color:var(--navy); }
+.btn-outline:hover{ background:var(--tint); transform:translateY(-2px); }
+.btn-lg{ padding:16px 36px; font-size:16px; }
+
+/* --------------------------------------------------------------------
+   0. Sticky header
+   -------------------------------------------------------------------- */
+.site-header{
+  position:sticky; top:0; z-index:100;
+  height:var(--header-h);
+  display:flex; align-items:center;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(14px) saturate(160%);
+  -webkit-backdrop-filter:blur(14px) saturate(160%);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s ease, box-shadow .3s ease, background-color .3s ease;
+}
+.site-header.is-scrolled{
+  border-bottom-color:var(--line);
+  box-shadow:0 6px 24px -18px rgba(27,42,107,.4);
+  background:rgba(255,255,255,.94);
+}
+.header-inner{
+  width:100%; max-width:var(--container); margin:0 auto;
+  padding:0 clamp(20px, 5vw, 48px);
+  display:flex; align-items:center; justify-content:space-between;
+}
+.site-nav{ display:flex; gap:28px; }
+.site-nav a{
+  font-size:.92rem; font-weight:600; color:#1B2A6B;
+  text-decoration:none; padding:6px 2px;
+  border-bottom:2px solid transparent;
+  transition:border-color .2s ease;
+}
+.site-nav a:hover{ border-bottom-color:#4FC3F7; }
+.nav-toggle{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  width:36px; height:36px;
+  border:none; background:none; cursor:pointer;
+  padding:0;
+}
+.nav-toggle span{
+  width:100%; height:2px;
+  background:var(--navy);
+  border-radius:2px;
+  transition:transform .25s ease, opacity .25s ease;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+.mobile-nav{
+  display:none;
+  flex-direction:column;
+  position:absolute; top:100%; left:0; right:0;
+  background:#fff;
+  border-top:1px solid var(--line);
+  padding:8px clamp(20px, 5vw, 48px) 18px;
+  box-shadow:0 12px 24px -12px rgba(27,42,107,.25);
+}
+.mobile-nav a{
+  padding:14px 4px;
+  font-size:1rem; font-weight:600; color:var(--navy);
+  border-bottom:1px solid var(--line);
+}
+.mobile-nav a:last-child{ border-bottom:none; }
+.mobile-nav.is-open{ display:flex; }
+
+@media (max-width:780px){
+  .site-nav{ display:none; }
+  .nav-toggle{ display:flex; }
+}
+@media (min-width:781px){
+  .mobile-nav{ display:none !important; }
+}
+.logo-lockup{ display:inline-flex; align-items:center; gap:12px; }
+.logo-img{ height:26px; width:auto; }
+.logo-img-footer{ height:24px; }
+.logo-divider{ width:1px; height:22px; background:var(--line); }
+.logo-zh-img{ height:22px; width:auto; display:block; }
+
+/* --------------------------------------------------------------------
+   1. Hero
+   -------------------------------------------------------------------- */
+.hero{
+  position:relative;
+  padding-top:clamp(56px, 9vw, 92px);
+  padding-bottom:40px;
+  background: linear-gradient(135deg, #1B2A6B 0%, #142057 100%);
+  overflow:hidden;
+}
+.hero-inner{
+  max-width:var(--container); margin:0 auto;
+  padding:0 clamp(20px, 5vw, 48px);
+  display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;
+}
+.hero-copy h1{
+  font-size:clamp(2.15rem, 4.6vw, 3.35rem);
+  font-weight:900; color:#fff; line-height:1.16; letter-spacing:-.015em;
+  margin-top:0; margin-bottom:20px;
+}
+.hero-h1-sub{
+  font-size:0.55em;
+  font-weight:600;
+  display:inline-block;
+  margin-top:4px;
+}
+.hero-sub{
+  font-size:16.5px; line-height:1.75; color:rgba(255,255,255,.85);
+  max-width:460px; margin-bottom:30px;
+}
+.hero-media{ position:relative; margin-top:clamp(2px, 1vw, 10px); }
+.hero-frame{
+  position:relative; margin-inline:auto; max-width:420px;
+  aspect-ratio:0.78; overflow:hidden;
+  border-radius:24px; box-shadow:var(--shadow-lift);
+  border:1px solid var(--line);
+}
+.hero-img{
+  width:100%; height:100%; display:block;
+  object-fit:cover; object-position:50% 40%;
+}
+
+.hero-trust{
+  display:flex; align-items:center; flex-wrap:wrap; gap:14px;
+  margin-top:34px; padding-top:22px; border-top:1px solid rgba(255,255,255,.25);
+}
+.hero-trust-item{
+  display:flex; align-items:center; gap:8px;
+  font-size:12.5px; white-space:nowrap;
+}
+.hero-trust-item span{ color:#FFFFFF; }
+.hero-trust-item .icon{ font-size:19px; color:#4FC3F7; stroke:#4FC3F7; flex-shrink:0; }
+.spain-flag-icon{
+  display:inline-block; width:22px; height:16px; border-radius:2px; flex-shrink:0;
+  background: linear-gradient(to bottom, #AA151B 0% 25%, #F1BF00 25% 75%, #AA151B 75% 100%);
+}
+.hero-trust-item strong{ color:#FFFFFF; font-weight:700; }
+.hero-trust-divider{ width:1px; height:15px; background: rgba(255,255,255,.25); }
+@media (max-width:480px){
+  .hero-trust{ gap:10px 16px; }
+  .hero-trust-divider{ display:none; }
+}
+
+.scroll-cue{
+  display:flex; justify-content:center; margin-top:12px;
+}
+.scroll-cue span{
+  width:1px; height:34px; background:linear-gradient(var(--sky), transparent);
+  animation:cue 2.2s ease-in-out infinite;
+}
+@keyframes cue{
+  0%,100%{ transform:translateY(0); opacity:.9; }
+  50%{ transform:translateY(8px); opacity:.3; }
+}
+@media (prefers-reduced-motion: reduce){ .scroll-cue span{ animation:none; } }
+
+@media (max-width:560px){
+  .hero-inner{ grid-template-columns:1fr; gap:36px; text-align:left; align-items:start; }
+  .hero-frame{ max-width:340px; }
+}
+
+.hero .btn-primary{ background:#FFFFFF; color:#1B2A6B; }
+.hero .btn-primary:hover{ background:#EAF4FC; color:#1B2A6B; }
+
+/* --------------------------------------------------------------------
+   3. HAP（Micro）panels
+   -------------------------------------------------------------------- */
+.biohap{ background:#fff; }
+.biohap-grid{
+  margin-top:48px;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:44px;
+}
+.biohap-panel{ text-align:center; }
+.panel-circle{
+  position:relative; width:min(240px, 70vw); aspect-ratio:1/1;
+  border-radius:50%; overflow:hidden; margin:0 auto 22px;
+  box-shadow:0 0 0 1px var(--tint-border), var(--shadow-soft);
+}
+.panel-circle::after{
+  content:''; position:absolute; inset:-9px; border-radius:50%;
+  border:1px solid rgba(79,195,247,.55); pointer-events:none;
+}
+.panel-circle img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  transform:scale(1.12); transition:transform .7s ease;
+}
+.biohap-panel:hover .panel-circle img{ transform:scale(1.2); }
+.panel-label{
+  position:absolute; left:0; right:0; bottom:0;
+  padding:34px 12px 14px;
+  background:linear-gradient(to top, rgba(9,17,52,.88), rgba(9,17,52,0));
+  color:#fff; font-weight:700; font-size:15.5px; letter-spacing:.02em;
+}
+.panel-desc{
+  font-size:14.5px; line-height:1.8; color:var(--body);
+  max-width:280px; margin:0 auto; text-align:left;
+}
+
+@media (max-width:900px){
+  .biohap-grid{ grid-template-columns:1fr; gap:48px; max-width:340px; margin-inline:auto; margin-top:48px; }
+}
+
+/* --------------------------------------------------------------------
+   3b. 氟化物 + HAP（Micro）雙重活性系統
+   -------------------------------------------------------------------- */
+.tech-breakdown{ padding:80px 0; background:#F7FAFD; }
+.tech-card-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:40px; }
+@media (max-width:720px){ .tech-card-grid{ grid-template-columns:1fr; } }
+
+.tech-card{ position:relative; overflow:hidden; border-radius:20px; padding:32px 28px; background:#fff; border:1.5px solid #E3E7EC; }
+.tech-card::before{ content:""; position:absolute; top:0; left:0; right:0; height:6px; }
+.tech-card-blue::before{ background:linear-gradient(90deg,#1E5FA6,#4FC3F7); }
+.tech-card-pink::before{ background:linear-gradient(90deg,#C2185B,#F06292); }
+.tech-card-blue{ background:linear-gradient(180deg,#EAF4FC 0%,#fff 20%); }
+.tech-card-pink{ background:linear-gradient(180deg,#FDEEF3 0%,#fff 20%); }
+
+.tech-card-product-img{ width:100%; max-width:180px; display:block; margin:0 auto 16px; }
+
+.tech-card-tag{ display:inline-block; font-size:.78rem; font-weight:700; letter-spacing:.5px; padding:5px 14px; border-radius:20px; margin-bottom:18px; }
+.tech-card-blue .tech-card-tag{ background:#1E5FA6; color:#fff; }
+.tech-card-pink .tech-card-tag{ background:#C2185B; color:#fff; }
+
+.tech-card h3{ font-size:1.3rem; line-height:1.35; margin:0 0 14px; font-weight:900; }
+.tech-card-blue h3{ color:#1B2A6B; }
+.tech-card-pink h3{ color:#8E1345; }
+.tech-card-zh{ display:block; font-size:1rem; font-weight:500; color:#5C6672; margin-top:3px; }
+
+.tech-card-desc{ font-size:.95rem; line-height:1.75; color:#333; margin-bottom:16px; }
+.tech-card-target{ font-size:.88rem; color:#5C6672; padding-top:14px; border-top:1px dashed #E3E7EC; margin:0; }
+
+.tech-model-banner{
+  margin-top:32px;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 16px 32px rgba(27,42,107,.15);
+}
+.tech-model-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* --------------------------------------------------------------------
+   4. 產品系列
+   -------------------------------------------------------------------- */
+.products{ background:#fff; }
+
+.product-rail{ margin-top:40px; position:relative; }
+
+.product-rail-track{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom:14px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.product-rail-track::-webkit-scrollbar{ height:6px; }
+.product-rail-track::-webkit-scrollbar-thumb{ background:#BFE0F7; border-radius:10px; }
+.product-rail-track::-webkit-scrollbar-track{ background:transparent; }
+
+.rail-card{
+  flex: 0 0 auto;
+  width:220px;
+  scroll-snap-align:start;
+  background:#fff;
+  border:1.5px solid #E3E7EC;
+  border-radius:18px;
+  overflow:hidden;
+  transition:box-shadow .2s ease, transform .2s ease;
+}
+.rail-card:hover{ box-shadow:0 12px 24px rgba(27,42,107,.12); transform:translateY(-3px); }
+
+.rail-img-frame{
+  aspect-ratio:1/1;
+  overflow:hidden;
+  background:#F7FAFD;
+}
+.rail-img-frame img{ width:100%; height:100%; object-fit:cover; display:block; }
+.rail-img-frame img.img-crop-right{ object-position: right center; }
+
+.rail-title{
+  text-align:center;
+  padding:14px 12px;
+  font-size:1rem;
+  font-weight:700;
+  color:#FFFFFF;
+  background:#1B2A6B;
+  margin:0;
+}
+
+@media (min-width:900px){
+  .rail-card{ width:240px; }
+}
+
+/* 右邊淡出提示,暗示重有內容可以滑(.products section background係#fff,同gradient終點顏色一致) */
+.product-rail::after{
+  content:"";
+  position:absolute; top:0; right:0; bottom:14px; width:48px;
+  background:linear-gradient(to right, transparent, #fff);
+  pointer-events:none;
+}
+
+/* --------------------------------------------------------------------
+   4b. 品牌故事
+   -------------------------------------------------------------------- */
+.brand-story{ padding:80px 0; background:#F7FAFD; }
+.video-frame{
+  position:relative;
+  display:block;
+  width:100%;
+  max-width:900px;
+  margin:32px auto 0;
+  aspect-ratio:16/9;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 16px 32px rgba(27,42,107,.15);
+  background:#000;
+}
+.video-thumb{
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+  transition:opacity .2s ease;
+}
+.video-frame:hover .video-thumb{ opacity:.85; }
+.video-play-btn{
+  position:absolute; top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  width:88px; height:auto;
+  filter:drop-shadow(0 6px 14px rgba(0,0,0,.4));
+  transition:transform .2s ease;
+}
+.video-frame:hover .video-play-btn{ transform:translate(-50%,-50%) scale(1.08); }
+
+/* --------------------------------------------------------------------
+   5. Cross-sell：正畸專用牙刷
+   -------------------------------------------------------------------- */
+.cross-sell{ padding:80px 0; background:#fff; }
+.cross-sell-card{
+  display:grid; grid-template-columns: 0.85fr 1.15fr; gap:44px; align-items:center;
+  background:#F7FAFD; border-radius:24px; padding:32px; border:1.5px solid #E3E7EC;
+}
+@media (max-width:780px){ .cross-sell-card{ grid-template-columns:1fr; } }
+.cross-sell-media{ display:flex; justify-content:center; }
+.cross-sell-img{
+  max-width:100%; border-radius:16px;
+  box-shadow:0 12px 28px rgba(27,42,107,.14);
+}
+.cross-sell-copy h2{ font-size:1.6rem; color:#1B2A6B; margin:0 0 12px; line-height:1.3; }
+.cross-sell-lead{ font-size:.98rem; line-height:1.75; color:#333; margin-bottom:18px; }
+.cross-sell-copy .badge-row{ margin-bottom:22px; }
+.cross-sell-copy .badge{
+  background:var(--tint); border:1px solid var(--tint-border); color:var(--navy);
+}
+
+/* --------------------------------------------------------------------
+   6. 邊度買
+   -------------------------------------------------------------------- */
+.where-to-buy{ background:#fff; }
+.buy-grid{
+  margin-top:44px;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+  max-width:860px; margin-inline:auto;
+  align-items:stretch;
+}
+.buy-card{
+  position:relative; background:#fff; border:1px solid var(--line);
+  border-radius:var(--radius-card); text-align:center;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:10px; min-height:280px; padding:32px 24px;
+  transition:box-shadow .25s ease, transform .25s ease, border-color .25s ease;
+}
+.buy-card:hover{ box-shadow:var(--shadow-soft); transform:translateY(-3px); }
+.buy-mark{
+  width:64px; height:64px; border-radius:50%;
+  overflow:hidden;
+  background:#fff; color:var(--blue);
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700; font-size:15px; margin-bottom:16px;
+}
+.buy-mark-solid{ background:var(--navy); color:#fff; }
+.buy-mark img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+.buy-mark,
+.buy-mark.buy-mark-solid{
+  width:64px !important;
+  height:64px !important;
+  border-radius:50% !important;
+  overflow:hidden !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background:#fff !important;
+  padding:0 !important;
+  box-sizing:border-box !important;
+}
+.buy-mark img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  display:block !important;
+}
+.buy-card h3{ font-size:16px; font-weight:700; color:var(--navy); margin-bottom:6px; }
+.buy-card p{ font-size:13.5px; color:var(--body); margin-bottom:20px; }
+.buy-card .btn{ margin-top:auto; width:100%; }
+
+@media (max-width:700px){
+  .buy-grid{ grid-template-columns:1fr; max-width:360px; }
+}
+
+/* --------------------------------------------------------------------
+   7. Footer / CTA
+   -------------------------------------------------------------------- */
+.site-footer{ background:var(--navy); }
+
+.footer-bottom{
+  padding:56px 24px 44px;
+  display:flex; flex-direction:column; align-items:center; gap:18px;
+  text-align:center;
+}
+.footer-logo{ display:flex; align-items:center; gap:10px; }
+.footer-logo .logo-img{ filter:brightness(0) invert(1); }
+.footer-logo .logo-zh-img{ filter:brightness(0) invert(1); }
+
+.footer-social{ display:flex; gap:14px; }
+.social-icon{
+  width:38px; height:38px; border-radius:50%;
+  border:1px solid rgba(255,255,255,.35); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  transition:background-color .2s ease, transform .2s ease;
+}
+.social-icon svg{ width:18px; height:18px; }
+.social-icon:hover{ background:rgba(255,255,255,.14); transform:translateY(-2px); }
+
+.footer-official-link{
+  font-size:13.5px; color:rgba(255,255,255,.72);
+  border-bottom:1px solid rgba(255,255,255,.35);
+  padding-bottom:2px; transition:color .2s ease, border-color .2s ease;
+}
+.footer-official-link:hover{ color:#fff; border-color:#fff; }
+
+.footer-copy{ font-size:12px; color:rgba(255,255,255,.45); margin-top:6px; }
+
+/* --------------------------------------------------------------------
+   Scroll reveal
+   -------------------------------------------------------------------- */
+.reveal{
+  opacity:1; transform:none;
+}
+.js-ready .reveal{
+  opacity:0; transform:translateY(22px);
+  transition:opacity .7s ease, transform .7s ease;
+}
+.js-ready .reveal.is-visible{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){
+  .js-ready .reveal{ opacity:1; transform:none; transition:none; }
+}
