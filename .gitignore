@@ -1,0 +1,6 @@
+_share/
+_未使用/
+_internal/
+.DS_Store
+**/.DS_Store
+__pycache__/
