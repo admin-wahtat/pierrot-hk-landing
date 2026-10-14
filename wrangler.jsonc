@@ -1,0 +1,10 @@
+{
+  // Pierrot 貝潔得 官網：純靜態網站，由 Cloudflare Workers 靜態資源服務
+  "name": "pierrot-hk-landing",
+  "compatibility_date": "2026-10-12",
+  "assets": {
+    "directory": "./",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}
