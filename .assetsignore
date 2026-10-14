@@ -1,0 +1,13 @@
+# 唔好公開上網嘅檔案
+.git
+.gitignore
+.assetsignore
+wrangler.jsonc
+.DS_Store
+**/.DS_Store
+tools
+_internal
+_share
+_未使用
+.wrangler
+node_modules
