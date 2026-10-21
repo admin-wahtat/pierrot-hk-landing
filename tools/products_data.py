@@ -240,6 +240,7 @@ PRODUCTS = [
     {
         "id": "kids-gel-strawberry",
         "name": "兒童啫喱牙膏（草莓味）",
+        "hktvmall": "https://www.hktvmall.com/hktv/zh/main/%E5%AF%8C%E5%B1%B1%E5%81%A5%E5%BA%B7/s/S2552001/%E8%AD%B7%E7%90%86%E4%BF%9D%E5%81%A5/%E8%AD%B7%E7%90%86%E4%BF%9D%E5%81%A5/%E5%80%8B%E4%BA%BA%E8%AD%B7%E7%90%86%E7%94%A8%E5%93%81/%E5%8F%A3%E8%85%94%E8%AD%B7%E7%90%86/%E5%85%92%E7%AB%A5%E5%8F%A3%E8%85%94%E8%AD%B7%E7%90%86/%E8%B2%9D%E6%BD%94%E5%BE%97-%E5%85%92%E7%AB%A5%E5%95%AB%E5%96%B1%E7%89%99%E8%86%8F-%E8%8D%89%E8%8E%93%E5%91%B3-75ml/p/S2552001_S_12080_TYM",
         "en": "Piwy Dental Gel Strawberry",
         "category": "兒童牙膏",
         "size": "75ml",
@@ -263,6 +264,7 @@ PRODUCTS = [
     {
         "id": "kids-gel-apple",
         "name": "兒童啫喱牙膏（蘋果味）",
+        "hktvmall": "https://www.hktvmall.com/hktv/zh/main/%E5%AF%8C%E5%B1%B1%E5%81%A5%E5%BA%B7/s/S2552001/%E8%AD%B7%E7%90%86%E4%BF%9D%E5%81%A5/%E8%AD%B7%E7%90%86%E4%BF%9D%E5%81%A5/%E5%80%8B%E4%BA%BA%E8%AD%B7%E7%90%86%E7%94%A8%E5%93%81/%E5%8F%A3%E8%85%94%E8%AD%B7%E7%90%86/%E5%85%92%E7%AB%A5%E5%8F%A3%E8%85%94%E8%AD%B7%E7%90%86/%E8%B2%9D%E6%BD%94%E5%BE%97-%E5%85%92%E7%AB%A5%E5%95%AB%E5%96%B1%E7%89%99%E8%86%8F-%E8%98%8B%E6%9E%9C%E5%91%B3-75ml/p/S2552001_S_12081_TYM",
         "en": "Sharky Dental Gel Apple",
         "category": "兒童牙膏",
         "size": "75ml",
