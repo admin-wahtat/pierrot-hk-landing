@@ -33,6 +33,7 @@ USAGE_MW = "刷牙後取適量含漱約 30 秒，然後吐出。請勿吞服。�
 PRODUCTS = [
     {
         "id": "hap-sensitive",
+        "hktvmall": "https://hktvmallredirect.com/vSVA4vA8",
         "name": "HAP升級雙效抗敏牙膏",
         "en": "Sensitive Protect",
         "category": "成人牙膏",
@@ -55,6 +56,7 @@ PRODUCTS = [
     },
     {
         "id": "hap-whitening",
+        "hktvmall": "https://hktvmallredirect.com/7xufLgNt",
         "name": "HAP升級雙效亮白牙膏",
         "en": "Whitening Protect",
         "category": "成人牙膏",
@@ -77,6 +79,7 @@ PRODUCTS = [
     },
     {
         "id": "sensitive",
+        "hktvmall": "https://hktvmallredirect.com/bdLG9GMp",
         "name": "防敏感全效牙膏",
         "en": "Sensitive",
         "category": "成人牙膏",
@@ -100,6 +103,7 @@ PRODUCTS = [
     },
     {
         "id": "charcoal",
+        "hktvmall": "https://hktvmallredirect.com/pxNytgeK",
         "name": "活性炭亮白潔淨牙膏",
         "en": "Whitening Active Charcoal",
         "category": "成人牙膏",
@@ -123,6 +127,7 @@ PRODUCTS = [
     },
     {
         "id": "papaya-whitening",
+        "hktvmall": "https://hktvmallredirect.com/VpgcwkbZ",
         "name": "木瓜亮白去漬牙膏",
         "en": "Whitening Papaine",
         "category": "成人牙膏",
@@ -146,6 +151,7 @@ PRODUCTS = [
     },
     {
         "id": "aloe-gum",
+        "hktvmall": "https://hktvmallredirect.com/eFyMT2bY",
         "name": "蘆薈護齦牙膏",
         "en": "Gum Protection Aloe Vera",
         "category": "成人牙膏",
@@ -170,6 +176,7 @@ PRODUCTS = [
     },
     {
         "id": "propolis-gum",
+        "hktvmall": "https://hktvmallredirect.com/BWF5BxyS",
         "name": "蜂膠健齦牙膏",
         "en": "Healthy Gums Propolis",
         "category": "成人牙膏",
@@ -287,6 +294,7 @@ PRODUCTS = [
     },
     {
         "id": "kids-mouthwash",
+        "hktvmall": "https://hktvmallredirect.com/uVeFeg4f",
         "name": "兒童漱口水（草莓味）",
         "en": "Piwy Mouthwash",
         "category": "漱口水",
@@ -309,6 +317,7 @@ PRODUCTS = [
     },
     {
         "id": "total-care-mouthwash",
+        "hktvmall": "https://hktvmallredirect.com/EeMFrcyZ",
         "name": "特護漱口水",
         "en": "Total Care Mouthwash",
         "category": "漱口水",
@@ -331,6 +340,7 @@ PRODUCTS = [
     },
     {
         "id": "sensitive-mouthwash",
+        "hktvmall": "https://hktvmallredirect.com/t39Cxs37",
         "name": "防敏感漱口水",
         "en": "Sensitive Mouthwash",
         "category": "漱口水",

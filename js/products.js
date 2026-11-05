@@ -6,7 +6,7 @@ window.PIERROT_PRODUCTS = {
   "category": "成人牙膏",
   "tagline": "HAP 填補牙面微細孔洞，加氟化物強化琺瑯質，冷熱酸甜都自在",
   "size": "75ml",
-  "url": "https://www.hktvmall.com/hktv/zh/main/%E5%AF%8C%E5%B1%B1%E5%81%A5%E5%BA%B7/s/S2552001",
+  "url": "https://hktvmallredirect.com/vSVA4vA8",
   "img": "/Assets/products/hap-sensitive-sm.webp"
  },
  "hap-whitening": {
@@ -15,7 +15,7 @@ window.PIERROT_PRODUCTS = {
   "category": "成人牙膏",
   "tagline": "HAP 令牙齒表面更平滑，回復自然亮澤；氟化物強化防蛀",
   "size": "75ml",
-  "url": "https://www.hktvmall.com/hktv/zh/main/%E5%AF%8C%E5%B1%B1%E5%81%A5%E5%BA%B7/s/S2552001",
+  "url": "https://hktvmallredirect.com/7xufLgNt",
   "img": "/Assets/products/hap-whitening-sm.webp"
  },
  "sensitive": {
@@ -24,7 +24,7 @@ window.PIERROT_PRODUCTS = {
   "category": "成人牙膏",
   "tagline": "專業抗敏配方，減輕冷熱酸甜敏感，同時呵護牙齦",
   "size": "75ml",
-  "url": "https://www.hktvmall.com/hktv/zh/main/%E5%AF%8C%E5%B1%B1%E5%81%A5%E5%BA%B7/s/S2552001",
+  "url": "https://hktvmallredirect.com/bdLG9GMp",
   "img": "/Assets/products/sensitive-sm.webp"
  },
  "charcoal": {
@@ -33,7 +33,7 @@ window.PIERROT_PRODUCTS = {
   "category": "成人牙膏",
   "tagline": "活性炭吸附咖啡、茶、煙漬，雙氟配方強化琺瑯質",
   "size": "75ml",
-  "url": "https://www.hktvmall.com/hktv/zh/main/%E5%AF%8C%E5%B1%B1%E5%81%A5%E5%BA%B7/s/S2552001",
+  "url": "https://hktvmallredirect.com/pxNytgeK",
   "img": "/Assets/products/charcoal-sm.webp"
  },
  "papaya-whitening": {
@@ -42,7 +42,7 @@ window.PIERROT_PRODUCTS = {
   "category": "成人牙膏",
   "tagline": "天然木瓜酵素，溫和去除表面牙漬",
   "size": "75ml",
-  "url": "https://www.hktvmall.com/hktv/zh/main/%E5%AF%8C%E5%B1%B1%E5%81%A5%E5%BA%B7/s/S2552001",
+  "url": "https://hktvmallredirect.com/VpgcwkbZ",
   "img": "/Assets/products/papaya-whitening-sm.webp"
  },
  "aloe-gum": {
@@ -51,7 +51,7 @@ window.PIERROT_PRODUCTS = {
   "category": "成人牙膏",
   "tagline": "天然蘆薈配合洋甘菊，溫和呵護牙齦",
   "size": "75ml",
-  "url": "https://www.hktvmall.com/hktv/zh/main/%E5%AF%8C%E5%B1%B1%E5%81%A5%E5%BA%B7/s/S2552001",
+  "url": "https://hktvmallredirect.com/eFyMT2bY",
   "img": "/Assets/products/aloe-gum-sm.webp"
  },
  "propolis-gum": {
@@ -60,7 +60,7 @@ window.PIERROT_PRODUCTS = {
   "category": "成人牙膏",
   "tagline": "天然蜂膠配合洋甘菊，固齒健齦",
   "size": "75ml",
-  "url": "https://www.hktvmall.com/hktv/zh/main/%E5%AF%8C%E5%B1%B1%E5%81%A5%E5%BA%B7/s/S2552001",
+  "url": "https://hktvmallredirect.com/BWF5BxyS",
   "img": "/Assets/products/propolis-gum-sm.webp"
  },
  "ultrafresh": {
@@ -105,7 +105,7 @@ window.PIERROT_PRODUCTS = {
   "category": "漱口水",
   "tagline": "無酒精，溫和唔刺激；6 歲以上適用",
   "size": "500ml",
-  "url": "https://www.hktvmall.com/hktv/zh/main/%E5%AF%8C%E5%B1%B1%E5%81%A5%E5%BA%B7/s/S2552001",
+  "url": "https://hktvmallredirect.com/uVeFeg4f",
   "img": "/Assets/products/kids-mouthwash-sm.webp"
  },
  "total-care-mouthwash": {
@@ -114,7 +114,7 @@ window.PIERROT_PRODUCTS = {
   "category": "漱口水",
   "tagline": "6 大修護功效，薄荷味，令口腔更健康",
   "size": "500ml",
-  "url": "https://www.hktvmall.com/hktv/zh/main/%E5%AF%8C%E5%B1%B1%E5%81%A5%E5%BA%B7/s/S2552001",
+  "url": "https://hktvmallredirect.com/EeMFrcyZ",
   "img": "/Assets/products/total-care-mouthwash-sm.webp"
  },
  "sensitive-mouthwash": {
@@ -123,7 +123,7 @@ window.PIERROT_PRODUCTS = {
   "category": "漱口水",
   "tagline": "無酒精唔灼口，抗敏兼幫助預防牙菌膜",
   "size": "500ml",
-  "url": "https://www.hktvmall.com/hktv/zh/main/%E5%AF%8C%E5%B1%B1%E5%81%A5%E5%BA%B7/s/S2552001",
+  "url": "https://hktvmallredirect.com/t39Cxs37",
   "img": "/Assets/products/sensitive-mouthwash-sm.webp"
  }
 };
