@@ -708,7 +708,10 @@ section{ padding:60px 0; }
   .hapx-visual{ aspect-ratio:4 / 3; border-radius:20px; }
   .hapx-ring{ box-shadow:0 0 0 30px rgba(255,255,255,.18), 0 0 0 60px rgba(255,255,255,.1); }
   .hapx-claim{ font-size:16px; }
-  .hapx-actions .btn{ flex:1 1 auto; text-align:center; }
+  /* 手機：只留「了解更多」做主按鈕（購買掣喺產品頁） */
+  .hapx-actions .btn-primary{ display:none; }
+  .hapx-more{ display:flex; justify-content:center; align-items:center; gap:6px; width:100%; padding:15px 20px; border:0; border-radius:var(--radius-btn); background:var(--navy); color:#fff; }
+  .hapx-more:hover{ background:var(--blue); color:#fff; }
 }
 @media (prefers-reduced-motion: reduce){ .hapx-visual img, .need-tile .need-ico{ transition:none; } }
 

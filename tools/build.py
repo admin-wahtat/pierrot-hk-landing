@@ -96,7 +96,7 @@ def layout(*, path, title, desc, body, active="", og_img="/Assets/web/hap-models
       <span class="logo-divider" aria-hidden="true"></span>
       <img src="/Assets/Logo/貝潔得-logo.png" alt="貝潔得" class="logo-zh-img">
     </a>
-    <nav class="site-nav" aria-label="主要導覽">{nav}</nav>
+    <nav class="site-nav" aria-label="主要導覽">{nav.replace(">30 秒揀牙膏測驗<", ">揀牙膏測驗<")}</nav>
     <a href="/quiz/" class="header-buy"><span class="hq-spark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.6 4C5.3 4 3.8 5.9 3.8 8.4c0 2.3 1 3.9 1.6 6.2.5 2.4.9 4.9 2.4 4.9 1.4 0 1.7-2 2.2-3.9.3-1 .8-1.6 1.7-1.6s1.4.6 1.7 1.6c.5 1.9.8 3.9 2.2 3.9 1.5 0 1.9-2.5 2.4-4.9.6-2.3 1.6-3.9 1.6-6.2C19.6 5.9 18.1 4 15.8 4c-1.7 0-2.6.9-4.1.9S9.3 4 7.6 4z" fill="#fff"/><path d="M6.6 8.2c.3-1 1-1.6 2-1.6" fill="none" stroke="#9FD8F7" stroke-width="1.4" stroke-linecap="round"/><path d="M20.5 1.5l.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6z" fill="#fff"/></svg></span><span class="hq-text"><small>30 秒</small>揀牙膏測驗</span><span class="hq-arrow" aria-hidden="true">→</span></a>
     <button class="nav-toggle" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
