@@ -5,3 +5,7 @@ _internal/
 **/.DS_Store
 __pycache__/
 .wrangler/
+
+# 原圖（網站冇用到）
+all product banner.png
+Assets/icons/Pearl Gloss Icon Grid.png

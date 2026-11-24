@@ -69,7 +69,7 @@ window.PIERROT_PRODUCTS = {
   "category": "成人牙膏",
   "tagline": "Physcool® 技術，清新持久唔辣口；微粒潔淨齒縫",
   "size": "75ml",
-  "url": "https://www.hktvmall.com/hktv/zh/main/%E5%AF%8C%E5%B1%B1%E5%81%A5%E5%BA%B7/s/S2552001",
+  "url": "https://www.hktvmall.com/p/S2552001_S_12095_TYM",
   "img": "/Assets/products/ultrafresh-sm.webp"
  },
  "herbal": {

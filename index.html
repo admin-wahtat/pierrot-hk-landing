@@ -33,23 +33,37 @@
       <span class="logo-divider" aria-hidden="true"></span>
       <img src="Assets/Logo/貝潔得-logo.png" alt="貝潔得" class="logo-zh-img">
     </a>
-    <nav class="site-nav" aria-label="主要導覽"><a href="products/index.html">產品系列</a><a href="hap/index.html">HAP 科技</a><a href="quiz/index.html">揀牙膏測驗</a><a href="about/index.html">品牌故事</a><a href="where-to-buy/index.html">購買渠道</a></nav>
+    <nav class="site-nav" aria-label="主要導覽"><a href="products/index.html">產品系列</a><a href="hap/index.html">HAP 科技</a><a href="quiz/index.html">30 秒揀牙膏測驗</a><a href="about/index.html">品牌故事</a><a href="where-to-buy/index.html">購買渠道</a></nav>
     <a href="quiz/index.html" class="header-buy"><span class="hq-spark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.6 4C5.3 4 3.8 5.9 3.8 8.4c0 2.3 1 3.9 1.6 6.2.5 2.4.9 4.9 2.4 4.9 1.4 0 1.7-2 2.2-3.9.3-1 .8-1.6 1.7-1.6s1.4.6 1.7 1.6c.5 1.9.8 3.9 2.2 3.9 1.5 0 1.9-2.5 2.4-4.9.6-2.3 1.6-3.9 1.6-6.2C19.6 5.9 18.1 4 15.8 4c-1.7 0-2.6.9-4.1.9S9.3 4 7.6 4z" fill="#fff"/><path d="M6.6 8.2c.3-1 1-1.6 2-1.6" fill="none" stroke="#9FD8F7" stroke-width="1.4" stroke-linecap="round"/><path d="M20.5 1.5l.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6z" fill="#fff"/></svg></span><span class="hq-text"><small>30 秒</small>揀牙膏測驗</span><span class="hq-arrow" aria-hidden="true">→</span></a>
     <button class="nav-toggle" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
     </button>
   </div>
-  <nav class="mobile-nav" id="mobileNav" aria-label="手機導覽"><a href="products/index.html">產品系列</a><a href="hap/index.html">HAP 科技</a><a href="quiz/index.html">揀牙膏測驗</a><a href="about/index.html">品牌故事</a><a href="where-to-buy/index.html">購買渠道</a></nav>
+  <nav class="mobile-nav" id="mobileNav" aria-label="手機導覽"><a href="products/index.html">產品系列</a><a href="hap/index.html">HAP 科技</a><a href="quiz/index.html">30 秒揀牙膏測驗</a><a href="about/index.html">品牌故事</a><a href="where-to-buy/index.html">購買渠道</a></nav>
 </header>
 
 <main id="main">
 
-<section class="home-banner" id="top">
+<section class="home-banner" id="top" aria-roledescription="carousel" aria-label="主打橫額">
   <h1 class="sr-only">Pierrot 貝潔得 Oral Hygiene 專業口腔護理</h1>
-  <picture>
-    <source media="(max-width:700px)" srcset="Assets/web/home-banner-mobile.webp">
-    <img src="Assets/web/home-banner-1400.webp" srcset="Assets/web/home-banner-1400.webp 1400w, Assets/web/home-banner.webp 2400w" sizes="100vw" alt="Pierrot 貝潔得 Oral Hygiene 專業口腔護理：來自西班牙，1945 年創立" class="home-banner-img" width="2400" height="1275">
-  </picture>
+  <div class="banner-track" data-banner-carousel>
+    <div class="banner-slide is-active" aria-roledescription="slide" aria-label="第 1 張，共 2 張">
+      <picture>
+        <source media="(max-width:700px)" srcset="Assets/web/home-banner-mobile.webp">
+        <img src="Assets/web/home-banner-1400.webp" srcset="Assets/web/home-banner-1400.webp 1400w, Assets/web/home-banner.webp 2400w" sizes="100vw" alt="Pierrot 貝潔得 Oral Hygiene 專業口腔護理：來自西班牙，1945 年創立" class="home-banner-img" width="2400" height="1275">
+      </picture>
+    </div>
+    <a class="banner-slide" href="products/index.html" aria-roledescription="slide" aria-label="第 2 張，共 2 張：睇全線產品">
+      <picture>
+        <source media="(max-width:700px)" srcset="Assets/web/home-banner-products-mobile.webp">
+        <img src="Assets/web/home-banner-products-1400.webp" srcset="Assets/web/home-banner-products-1400.webp 1400w, Assets/web/home-banner-products.webp 2400w" sizes="100vw" alt="Pierrot 貝潔得 全線口腔護理產品：為每個笑容提供專屬呵護" class="home-banner-img home-banner-img--products" width="2400" height="1275" loading="lazy" decoding="async">
+      </picture>
+    </a>
+    <div class="banner-dots" aria-label="揀橫額">
+      <button type="button" class="banner-dot is-active" aria-label="顯示第 1 張" aria-current="true"></button>
+      <button type="button" class="banner-dot" aria-label="顯示第 2 張"></button>
+    </div>
+  </div>
   <div class="banner-mobile-copy">
     <p class="banner-mobile-h">Oral Hygiene<span>專業口腔護理</span></p>
     <p class="banner-mobile-sub"><span class="spain-flag-icon" aria-hidden="true"></span>來自西班牙 · 1945 年創立</p>
@@ -61,7 +75,7 @@
   <div class="section-inner">
     <p class="eyebrow reveal">按需要揀</p>
     <h2 id="needs-h" class="reveal">你最想改善咩？</h2>
-    <div class="need-grid"><a class="need-tile reveal" href="products/index.html?f=sensitive"><img src="Assets/icons/need-sensitive.webp" alt="" class="need-ico" width="400" height="400"><strong>防敏感</strong><span>冷熱酸甜都自在</span></a><a class="need-tile reveal" href="products/index.html?f=whitening"><img src="Assets/icons/need-whitening.webp" alt="" class="need-ico" width="400" height="400"><strong>亮白</strong><span>回復自然光澤</span></a><a class="need-tile reveal" href="products/index.html?f=gum"><img src="Assets/icons/need-gum.webp" alt="" class="need-ico" width="400" height="400"><strong>護齦</strong><span>呵護牙齦健康</span></a><a class="need-tile reveal" href="products/index.html?f=fresh"><img src="Assets/icons/need-fresh.webp" alt="" class="need-ico" width="400" height="400"><strong>清新口氣</strong><span>持久清新</span></a><a class="need-tile reveal" href="products/index.html?f=cavity"><img src="Assets/icons/need-cavity.webp" alt="" class="need-ico" width="400" height="400"><strong>預防蛀牙</strong><span>日常防蛀保養</span></a><a class="need-tile reveal" href="products/index.html?f=kids"><img src="Assets/icons/need-kids.webp" alt="" class="need-ico" width="400" height="400"><strong>小朋友護齒</strong><span>2 歲起愛上刷牙</span></a></div>
+    <div class="need-grid"><a class="need-tile nt-pink reveal" href="products/index.html?f=sensitive"><span class="nt-text"><strong>防敏感</strong><span>冷熱酸甜都自在</span></span><span class="nt-art"><img src="Assets/icons/need-sensitive-pearl.webp" alt="" class="need-ico" width="360" height="360" loading="lazy"></span></a><a class="need-tile nt-blue reveal" href="products/index.html?f=whitening"><span class="nt-text"><strong>亮白</strong><span>回復自然光澤</span></span><span class="nt-art"><img src="Assets/icons/need-whitening-pearl.webp" alt="" class="need-ico" width="360" height="360" loading="lazy"></span></a><a class="need-tile nt-green reveal" href="products/index.html?f=gum"><span class="nt-text"><strong>護齦</strong><span>呵護牙齦健康</span></span><span class="nt-art"><img src="Assets/icons/need-gum-pearl.webp" alt="" class="need-ico" width="360" height="360" loading="lazy"></span></a><a class="need-tile nt-violet reveal" href="products/index.html?f=fresh"><span class="nt-text"><strong>清新口氣</strong><span>持久清新</span></span><span class="nt-art"><img src="Assets/icons/need-fresh-pearl.webp" alt="" class="need-ico" width="360" height="360" loading="lazy"></span></a><a class="need-tile nt-navy reveal" href="products/index.html?f=cavity"><span class="nt-text"><strong>預防蛀牙</strong><span>日常防蛀保養</span></span><span class="nt-art"><img src="Assets/icons/need-cavity-pearl.webp" alt="" class="need-ico" width="360" height="360" loading="lazy"></span></a><a class="need-tile nt-amber reveal" href="products/index.html?f=kids"><span class="nt-text"><strong>小朋友護齒</strong><span>2 歲起愛上刷牙</span></span><span class="nt-art"><img src="Assets/icons/need-kids-pearl.webp" alt="" class="need-ico" width="360" height="360" loading="lazy"></span></a></div>
   </div>
 </section>
 
@@ -71,22 +85,26 @@
     <a href="hap/index.html" class="hap-home-banner reveal" aria-label="了解 HAP 琺瑯填補技術">
       <img src="Assets/web/hap-banner.webp" srcset="Assets/web/hap-banner-900.webp 900w, Assets/web/hap-banner.webp 1600w" sizes="(max-width:1180px) 100vw, 1180px" alt="琺瑯填補技術：填補牙齒表面微細孔洞，Micro HAP" width="1600" height="976" loading="lazy">
     </a>
-    <div class="tech-card-grid reveal">
-      <article class="tech-card tech-card-blue">
-        <img src="Assets/products/hap-whitening-sm.webp" alt="Pierrot HAP升級雙效亮白牙膏" class="tech-card-product-img" loading="lazy">
-        <span class="tech-card-tag">拋光亮白配方</span>
-        <h3>HAP升級雙效亮白牙膏<span class="tech-card-zh">Whitening Protect</span></h3>
-        <p class="tech-card-desc">HAP（Micro）仿天然琺瑯質微粒有助填補牙齒表面微細孔洞，令牙齒表面更平滑、更有光澤；加強拋光配方去除日常表面牙漬，配合氟化物強化琺瑯質。</p>
-        <p class="tech-card-target">為想牙齒光滑亮澤、去除日常牙漬嘅您而設。</p>
-        <a href="products/hap-whitening.html" class="btn btn-outline btn-sm">了解更多</a>
+    <div class="hapx reveal">
+      <article class="hapx-row hapx-blue">
+        <div class="hapx-visual"><span class="hapx-ring" aria-hidden="true"></span><img src="Assets/products/hap-whitening-cut-sm.webp" srcset="Assets/products/hap-whitening-cut-sm.webp 640w, Assets/products/hap-whitening-cut.webp 1115w" sizes="(max-width:820px) 90vw, 560px" alt="Pierrot HAP升級雙效亮白牙膏" width="1115" height="736" loading="lazy"></div>
+        <div class="hapx-copy">
+          <p class="hapx-kicker">Whitening Protect</p>
+          <h3>HAP升級雙效<br>亮白牙膏</h3>
+          <p class="hapx-claim">HAP＋氟化物雙重保護。填補牙面微細孔洞，令牙面更平滑、更有光澤。</p>
+          <p class="hapx-for">為想牙齒光滑亮澤、去除日常牙漬嘅您而設</p>
+          <div class="hapx-actions"><a href="https://hktvmallredirect.com/7xufLgNt" class="btn btn-primary" data-buy="hap-whitening" data-source="home_hap" target="_blank" rel="noopener">HKTVmall 立即購買</a><a href="products/hap-whitening.html" class="hapx-more">了解更多 <span aria-hidden="true">→</span></a></div>
+        </div>
       </article>
-      <article class="tech-card tech-card-pink">
-        <img src="Assets/products/hap-sensitive-sm.webp" alt="Pierrot HAP升級雙效抗敏牙膏" class="tech-card-product-img" loading="lazy">
-        <span class="tech-card-tag">溫和抗敏配方</span>
-        <h3>HAP升級雙效抗敏牙膏<span class="tech-card-zh">Sensitive Protect</span></h3>
-        <p class="tech-card-desc">HAP（Micro）仿天然琺瑯質微粒，結構接近牙齒琺瑯質，有助填補牙齒表面微細孔洞，令牙齒表面更平滑緊密，舒緩牙齒敏感。配合氟化物，雙效呵護敏感牙齒。</p>
-        <p class="tech-card-target">為牙齒容易對冷熱酸甜敏感嘅您而設。</p>
-        <a href="products/hap-sensitive.html" class="btn btn-outline btn-sm">了解更多</a>
+      <article class="hapx-row hapx-pink hapx-rev">
+        <div class="hapx-visual"><span class="hapx-ring" aria-hidden="true"></span><img src="Assets/products/hap-sensitive-cut-sm.webp" srcset="Assets/products/hap-sensitive-cut-sm.webp 640w, Assets/products/hap-sensitive-cut.webp 1115w" sizes="(max-width:820px) 90vw, 560px" alt="Pierrot HAP升級雙效抗敏牙膏" width="1115" height="736" loading="lazy"></div>
+        <div class="hapx-copy">
+          <p class="hapx-kicker">Sensitive Protect</p>
+          <h3>HAP升級雙效<br>抗敏牙膏</h3>
+          <p class="hapx-claim">HAP＋氟化物雙重保護。填補牙面微細孔洞，舒緩冷熱酸甜敏感。</p>
+          <p class="hapx-for">為牙齒容易對冷熱酸甜敏感嘅您而設</p>
+          <div class="hapx-actions"><a href="https://hktvmallredirect.com/vSVA4vA8" class="btn btn-primary" data-buy="hap-sensitive" data-source="home_hap" target="_blank" rel="noopener">HKTVmall 立即購買</a><a href="products/hap-sensitive.html" class="hapx-more">了解更多 <span aria-hidden="true">→</span></a></div>
+        </div>
       </article>
     </div>
     <p class="center-link reveal"><a href="hap/index.html" class="btn btn-primary">了解 HAP 科技 →</a></p>
@@ -260,13 +278,13 @@
     <div>
       <h3>了解更多</h3>
       <a href="hap/index.html">HAP 科技</a>
-      <a href="quiz/index.html">揀牙膏測驗</a>
+      <a href="quiz/index.html">30 秒揀牙膏測驗</a>
       <a href="about/index.html">品牌故事</a>
       <a href="where-to-buy/index.html">購買渠道</a>
       <a href="https://www.pierrot.es" target="_blank" rel="noopener">Pierrot 西班牙官網 →</a>
     </div>
   </div>
-  <p class="footer-copy">© 2026 Pierrot 貝潔得 Hong Kong · 香港總代理：華達藥業有限公司</p>
+  <div class="footer-teeth" aria-hidden="true"><img src="Assets/web/footer-teeth.svg" alt="" width="1120" height="195" loading="lazy"></div>
 </footer>
 <script src="js/tracking.js"></script><script src="js/main.js"></script>
 </body>

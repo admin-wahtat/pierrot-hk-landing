@@ -55,7 +55,7 @@ def spain_badge():
 # ---------------------------------------------------------------- layout
 CUR = ' aria-current="page"'
 NAV = [("/products/", "產品系列", "products"), ("/hap/", "HAP 科技", "hap"),
-       ("/quiz/", "揀牙膏測驗", "quiz"), ("/about/", "品牌故事", "about"),
+       ("/quiz/", "30 秒揀牙膏測驗", "quiz"), ("/about/", "品牌故事", "about"),
        ("/where-to-buy/", "購買渠道", "buy")]
 
 
@@ -138,13 +138,13 @@ def layout(*, path, title, desc, body, active="", og_img="/Assets/web/hap-models
     <div>
       <h3>了解更多</h3>
       <a href="/hap/">HAP 科技</a>
-      <a href="/quiz/">揀牙膏測驗</a>
+      <a href="/quiz/">30 秒揀牙膏測驗</a>
       <a href="/about/">品牌故事</a>
       <a href="/where-to-buy/">購買渠道</a>
       <a href="https://www.pierrot.es" target="_blank" rel="noopener">Pierrot 西班牙官網 →</a>
     </div>
   </div>
-  <p class="footer-copy">© 2026 Pierrot 貝潔得 Hong Kong · 香港總代理：華達藥業有限公司</p>
+  <div class="footer-teeth" aria-hidden="true"><img src="/Assets/web/footer-teeth.svg" alt="" width="1120" height="195" loading="lazy"></div>
 </footer>
 {js}
 </body>
@@ -210,9 +210,12 @@ NEED_TILES = [
 ]
 
 
+NEED_COLOR = {"sensitive": "pink", "whitening": "blue", "gum": "green", "fresh": "violet", "cavity": "navy", "kids": "amber"}
+
+
 def need_tiles():
     return "".join(
-        f'<a class="need-tile reveal" href="/products/?f={k}"><img src="/Assets/icons/need-{k}.webp" alt="" class="need-ico" width="400" height="400"><strong>{t}</strong><span>{s}</span></a>'
+        f'<a class="need-tile nt-{NEED_COLOR[k]} reveal" href="/products/?f={k}"><span class="nt-text"><strong>{t}</strong><span>{s}</span></span><span class="nt-art"><img src="/Assets/icons/need-{k}-pearl.webp" alt="" class="need-ico" width="360" height="360" loading="lazy"></span></a>'
         for k, t, s in NEED_TILES)
 
 
@@ -610,12 +613,26 @@ def page_home():
     s, w = P["hap-sensitive"], P["hap-whitening"]
     bundles = "\n".join(bundle_card(i + 1, *b) for i, b in enumerate(BUNDLES))
     body = f"""
-<section class="home-banner" id="top">
+<section class="home-banner" id="top" aria-roledescription="carousel" aria-label="主打橫額">
   <h1 class="sr-only">Pierrot 貝潔得 Oral Hygiene 專業口腔護理</h1>
-  <picture>
-    <source media="(max-width:700px)" srcset="/Assets/web/home-banner-mobile.webp">
-    <img src="/Assets/web/home-banner-1400.webp" srcset="/Assets/web/home-banner-1400.webp 1400w, /Assets/web/home-banner.webp 2400w" sizes="100vw" alt="Pierrot 貝潔得 Oral Hygiene 專業口腔護理：來自西班牙，1945 年創立" class="home-banner-img" width="2400" height="1275">
-  </picture>
+  <div class="banner-track" data-banner-carousel>
+    <div class="banner-slide is-active" aria-roledescription="slide" aria-label="第 1 張，共 2 張">
+      <picture>
+        <source media="(max-width:700px)" srcset="/Assets/web/home-banner-mobile.webp">
+        <img src="/Assets/web/home-banner-1400.webp" srcset="/Assets/web/home-banner-1400.webp 1400w, /Assets/web/home-banner.webp 2400w" sizes="100vw" alt="Pierrot 貝潔得 Oral Hygiene 專業口腔護理：來自西班牙，1945 年創立" class="home-banner-img" width="2400" height="1275">
+      </picture>
+    </div>
+    <a class="banner-slide" href="/products/" aria-roledescription="slide" aria-label="第 2 張，共 2 張：睇全線產品">
+      <picture>
+        <source media="(max-width:700px)" srcset="/Assets/web/home-banner-products-mobile.webp">
+        <img src="/Assets/web/home-banner-products-1400.webp" srcset="/Assets/web/home-banner-products-1400.webp 1400w, /Assets/web/home-banner-products.webp 2400w" sizes="100vw" alt="Pierrot 貝潔得 全線口腔護理產品：為每個笑容提供專屬呵護" class="home-banner-img home-banner-img--products" width="2400" height="1275" loading="lazy" decoding="async">
+      </picture>
+    </a>
+    <div class="banner-dots" aria-label="揀橫額">
+      <button type="button" class="banner-dot is-active" aria-label="顯示第 1 張" aria-current="true"></button>
+      <button type="button" class="banner-dot" aria-label="顯示第 2 張"></button>
+    </div>
+  </div>
   <div class="banner-mobile-copy">
     <p class="banner-mobile-h">Oral Hygiene<span>專業口腔護理</span></p>
     <p class="banner-mobile-sub"><span class="spain-flag-icon" aria-hidden="true"></span>來自西班牙 · 1945 年創立</p>
@@ -637,22 +654,26 @@ def page_home():
     <a href="/hap/" class="hap-home-banner reveal" aria-label="了解 HAP 琺瑯填補技術">
       <img src="/Assets/web/hap-banner.webp" srcset="/Assets/web/hap-banner-900.webp 900w, /Assets/web/hap-banner.webp 1600w" sizes="(max-width:1180px) 100vw, 1180px" alt="琺瑯填補技術：填補牙齒表面微細孔洞，Micro HAP" width="1600" height="976" loading="lazy">
     </a>
-    <div class="tech-card-grid reveal">
-      <article class="tech-card tech-card-blue">
-        <img src="{img(w['id'])}" alt="Pierrot {e(w['name'])}" class="tech-card-product-img" loading="lazy">
-        <span class="tech-card-tag">拋光亮白配方</span>
-        <h3>{e(w['name'])}<span class="tech-card-zh">Whitening Protect</span></h3>
-        <p class="tech-card-desc">{e(w['intro'])}</p>
-        <p class="tech-card-target">為想牙齒光滑亮澤、去除日常牙漬嘅您而設。</p>
-        <a href="/products/{w['id']}.html" class="btn btn-outline btn-sm">了解更多</a>
+    <div class="hapx reveal">
+      <article class="hapx-row hapx-blue">
+        <div class="hapx-visual"><span class="hapx-ring" aria-hidden="true"></span><img src="/Assets/products/hap-whitening-cut-sm.webp" srcset="/Assets/products/hap-whitening-cut-sm.webp 640w, /Assets/products/hap-whitening-cut.webp 1115w" sizes="(max-width:820px) 90vw, 560px" alt="Pierrot HAP升級雙效亮白牙膏" width="1115" height="736" loading="lazy"></div>
+        <div class="hapx-copy">
+          <p class="hapx-kicker">Whitening Protect</p>
+          <h3>HAP升級雙效<br>亮白牙膏</h3>
+          <p class="hapx-claim">HAP＋氟化物雙重保護。填補牙面微細孔洞，令牙面更平滑、更有光澤。</p>
+          <p class="hapx-for">為想牙齒光滑亮澤、去除日常牙漬嘅您而設</p>
+          <div class="hapx-actions"><a href="{buy_url(w)}" class="btn btn-primary" data-buy="hap-whitening" data-source="home_hap" target="_blank" rel="noopener">HKTVmall 立即購買</a><a href="/products/{w['id']}.html" class="hapx-more">了解更多 <span aria-hidden="true">→</span></a></div>
+        </div>
       </article>
-      <article class="tech-card tech-card-pink">
-        <img src="{img(s['id'])}" alt="Pierrot {e(s['name'])}" class="tech-card-product-img" loading="lazy">
-        <span class="tech-card-tag">溫和抗敏配方</span>
-        <h3>{e(s['name'])}<span class="tech-card-zh">Sensitive Protect</span></h3>
-        <p class="tech-card-desc">{e(s['intro'])}</p>
-        <p class="tech-card-target">為牙齒容易對冷熱酸甜敏感嘅您而設。</p>
-        <a href="/products/{s['id']}.html" class="btn btn-outline btn-sm">了解更多</a>
+      <article class="hapx-row hapx-pink hapx-rev">
+        <div class="hapx-visual"><span class="hapx-ring" aria-hidden="true"></span><img src="/Assets/products/hap-sensitive-cut-sm.webp" srcset="/Assets/products/hap-sensitive-cut-sm.webp 640w, /Assets/products/hap-sensitive-cut.webp 1115w" sizes="(max-width:820px) 90vw, 560px" alt="Pierrot HAP升級雙效抗敏牙膏" width="1115" height="736" loading="lazy"></div>
+        <div class="hapx-copy">
+          <p class="hapx-kicker">Sensitive Protect</p>
+          <h3>HAP升級雙效<br>抗敏牙膏</h3>
+          <p class="hapx-claim">HAP＋氟化物雙重保護。填補牙面微細孔洞，舒緩冷熱酸甜敏感。</p>
+          <p class="hapx-for">為牙齒容易對冷熱酸甜敏感嘅您而設</p>
+          <div class="hapx-actions"><a href="{buy_url(s)}" class="btn btn-primary" data-buy="hap-sensitive" data-source="home_hap" target="_blank" rel="noopener">HKTVmall 立即購買</a><a href="/products/{s['id']}.html" class="hapx-more">了解更多 <span aria-hidden="true">→</span></a></div>
+        </div>
       </article>
     </div>
     <p class="center-link reveal"><a href="/hap/" class="btn btn-primary">了解 HAP 科技 →</a></p>

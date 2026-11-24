@@ -202,6 +202,7 @@ PRODUCTS = [
     {
         "id": "ultrafresh",
         "name": "超清新微粒潔淨牙膏",
+        "hktvmall": "https://www.hktvmall.com/p/S2552001_S_12095_TYM",
         "en": "Ultrafresh Micro Particles",
         "category": "成人牙膏",
         "size": "75ml",
