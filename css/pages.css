@@ -925,3 +925,13 @@ section{ padding:60px 0; }
   .quiz-fab.tip .quiz-fab__tip{opacity:1;transform:none}
   @media (max-width:760px){ .quiz-fab{display:flex} }
   @media (prefers-reduced-motion:reduce){ .quiz-fab__btn::after{animation:none} }
+
+/* ── 私隱政策 ── */
+.privacy-page{ padding:8px 0 72px; }
+.privacy-body > *{ max-width:820px; }
+.privacy-body h2{ font-size:20px; color:var(--navy); font-weight:900; margin:32px 0 10px; }
+.privacy-body p{ font-size:16px; line-height:1.9; color:var(--body); margin:0 0 12px; }
+.privacy-body ul{ list-style:disc; padding-left:22px; margin:0 0 12px; }
+.privacy-body li{ font-size:16px; line-height:1.9; color:var(--body); }
+.privacy-body a{ color:var(--blue); }
+.privacy-updated{ margin-top:32px !important; font-size:14px !important; color:var(--muted) !important; }
