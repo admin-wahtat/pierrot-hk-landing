@@ -3,7 +3,7 @@
    上線前：將下面兩個 ID 填入（留空即唔載入）
    ========================================================================== */
 window.PIERROT_TRACKING = {
-  META_PIXEL_ID: '',   // 例如 '123456789012345'
+  META_PIXEL_ID: '2018610512149332',   // 例如 '123456789012345'
   GA4_ID: ''           // 例如 'G-XXXXXXXXXX'
 };
 
@@ -68,12 +68,26 @@ window.PIERROT_TRACKING = {
     if (pd) window.pTrack('view_product', { product: pd.getAttribute('data-product') });
   });
 
+  // ---- 購物平台設定
+  //   日後加平台：喺下面加一行
+  //   日後 HKTVmall 加第二間店舖：喺該條購買連結加 data-store="店舖名"，會蓋過預設店舖
+  var RETAILERS = [
+    { match: /hktvmall\.com|hktvmallredirect\.com/, event: 'click_hktvmall', platform: 'HKTVmall', store: '富山健康' },
+    { match: /health3\.com\.hk/, event: 'click_health3', platform: 'Health3', store: 'Health3' },
+    { match: /wahtat-hk\.com/, event: 'click_wahtat', platform: 'Wahtat', store: 'Wahtat' }
+  ];
+
   // ---- 撳購買掣
   document.addEventListener('click', function (ev) {
     var a = ev.target.closest && ev.target.closest('a[data-buy]');
     if (!a) return;
-    var isHk = a.href.indexOf('hktvmall.com') !== -1;
-    window.pTrack(isHk ? 'click_hktvmall' : 'click_retailer', {
+    var r = null;
+    for (var i = 0; i < RETAILERS.length; i++) {
+      if (RETAILERS[i].match.test(a.href)) { r = RETAILERS[i]; break; }
+    }
+    window.pTrack(r ? r.event : 'click_retailer', {
+      platform: r ? r.platform : 'other',
+      store: a.getAttribute('data-store') || (r ? r.store : ''),
       product: a.getAttribute('data-buy'),
       source: a.getAttribute('data-source') || ''
     });
