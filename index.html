@@ -79,48 +79,65 @@
   </div>
 </section>
 
-<section class="home-hap" aria-labelledby="home-hap-h">
-  <div class="section-inner">
-    <h2 id="home-hap-h" class="sr-only">HAP 升級雙效系列：琺瑯填補技術，填補牙齒表面微細孔洞</h2>
-    <a href="hap/index.html" class="hap-home-banner reveal" aria-label="了解 HAP 琺瑯填補技術">
-      <img src="Assets/web/hap-banner.webp" srcset="Assets/web/hap-banner-900.webp 900w, Assets/web/hap-banner.webp 1600w" sizes="(max-width:1180px) 100vw, 1180px" alt="琺瑯填補技術：填補牙齒表面微細孔洞，Micro HAP" width="1600" height="976" loading="lazy">
-    </a>
-    <div class="hapx reveal">
-      <article class="hapx-row hapx-blue">
-        <div class="hapx-visual"><span class="hapx-ring" aria-hidden="true"></span><img src="Assets/products/hap-whitening-cut-sm.webp" srcset="Assets/products/hap-whitening-cut-sm.webp 640w, Assets/products/hap-whitening-cut.webp 1115w" sizes="(max-width:820px) 90vw, 560px" alt="Pierrot HAP升級雙效亮白牙膏" width="1115" height="736" loading="lazy"></div>
-        <div class="hapx-copy">
-          <p class="hapx-kicker">Whitening Protect</p>
-          <h3>HAP升級雙效<br>亮白牙膏</h3>
-          <p class="hapx-claim">HAP＋氟化物雙重保護。填補牙面微細孔洞，令牙面更平滑、更有光澤。</p>
-          <p class="hapx-for">為想牙齒光滑亮澤、去除日常牙漬嘅您而設</p>
-          <div class="hapx-actions"><a href="https://hktvmallredirect.com/7xufLgNt" class="btn btn-primary" data-buy="hap-whitening" data-source="home_hap" target="_blank" rel="noopener">HKTVmall 立即購買</a><a href="products/hap-whitening.html" class="hapx-more">了解更多 <span aria-hidden="true">→</span></a></div>
-        </div>
-      </article>
-      <article class="hapx-row hapx-pink hapx-rev">
-        <div class="hapx-visual"><span class="hapx-ring" aria-hidden="true"></span><img src="Assets/products/hap-sensitive-cut-sm.webp" srcset="Assets/products/hap-sensitive-cut-sm.webp 640w, Assets/products/hap-sensitive-cut.webp 1115w" sizes="(max-width:820px) 90vw, 560px" alt="Pierrot HAP升級雙效抗敏牙膏" width="1115" height="736" loading="lazy"></div>
-        <div class="hapx-copy">
-          <p class="hapx-kicker">Sensitive Protect</p>
-          <h3>HAP升級雙效<br>抗敏牙膏</h3>
-          <p class="hapx-claim">HAP＋氟化物雙重保護。填補牙面微細孔洞，舒緩冷熱酸甜敏感。</p>
-          <p class="hapx-for">為牙齒容易對冷熱酸甜敏感嘅您而設</p>
-          <div class="hapx-actions"><a href="https://hktvmallredirect.com/vSVA4vA8" class="btn btn-primary" data-buy="hap-sensitive" data-source="home_hap" target="_blank" rel="noopener">HKTVmall 立即購買</a><a href="products/hap-sensitive.html" class="hapx-more">了解更多 <span aria-hidden="true">→</span></a></div>
-        </div>
-      </article>
+<!-- 首頁 HAP section：琺瑯填補技術（樣式 css/pages.css .hx，動畫 js/home-hap.js） -->
+<section class="hx" id="hap" data-p="w" data-layout="a" data-tag="1" data-rings="off" aria-labelledby="home-hap-h">
+  <p class="sr-only">HAP 升級雙效系列：琺瑯填補技術，填補牙齒表面微細孔洞。亮白及抗敏兩款配方。</p>
+  <div class="hx-hero" id="hapHero">
+    <div class="hx-hero__stage" id="hapStage">
+      <div class="hx-hero__img" role="img" aria-label="HAP 微粒填補牙齒表面示意圖">
+        <div class="hx-halo hx-halo--w"></div><div class="hx-shine hx-shine--w"></div>
+      </div>
     </div>
-    <p class="center-link reveal"><a href="hap/index.html" class="btn btn-primary">了解 HAP 科技 →</a></p>
+    <div class="hx-alt" aria-hidden="true">
+      <div class="hx-alt__img" id="hapAltImg"><div class="hx-halo hx-halo--s"></div><div class="hx-shine hx-shine--s"></div></div>
+    </div>
+    <canvas id="hapParticles"></canvas>
+
+    <!-- 標籤 1：玻璃六角形 -->
+    <div class="hx-tag hx-tag--1">
+      <div class="hx-hex" id="hapHex"><div class="hx-hex__shape"></div><div class="hx-hex__txt">Micro<br>HAP</div></div>
+      <div class="hx-hex hx-hex--sm" id="hapHex2"><div class="hx-hex__shape"></div></div>
+      <div class="hx-hex hx-hex--sm" id="hapHex3"><div class="hx-hex__shape"></div></div>
+    </div>
+    <!-- 標籤 2：說明標籤＋指示線 -->
+    <svg class="hx-lead" id="hapLead"><line id="hapLeadLine"/><circle class="ping" id="hapPing" r="5"/><circle class="dot" id="hapDot" r="3.5"/></svg>
+    <div class="hx-tag hx-tag--2" id="hapTag2"><div class="hx-pill"><span class="hx-pill__icon">HAP</span><span><b>Micro HAP</b><small>仿天然琺瑯質微粒</small></span></div></div>
+    <!-- 標籤 3：圓形徽章 -->
+    <div class="hx-tag hx-tag--3" id="hapTag3"><div class="hx-seal">
+      <svg viewBox="0 0 100 100"><defs><path id="sealPath" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs>
+        <text><textPath href="#sealPath" textLength="234" lengthAdjust="spacing">MICRO HAP · 仿天然琺瑯質微粒 · </textPath></text></svg>
+      <div class="hx-seal__c"><small>Micro</small><b>HAP</b></div></div></div>
+    <!-- 標籤 4：線條六角形 -->
+    <div class="hx-tag hx-tag--4" id="hapTag4">
+      <svg viewBox="0 0 115.5 100"><polygon points="28.9,0 86.6,0 115.5,50 86.6,100 28.9,100 0,50"/><polygon class="run" points="28.9,0 86.6,0 115.5,50 86.6,100 28.9,100 0,50"/></svg>
+      <div class="t"><b>Micro HAP</b><small>仿天然琺瑯質微粒</small></div>
+    </div>
+
+    <div class="hx-person hx-person--w"><img src="Assets/web/home-hap/model-w.webp" alt="使用 HAP升級雙效亮白牙膏嘅女士" loading="lazy" decoding="async"></div>
+    <div class="hx-person hx-person--s"><img src="Assets/web/home-hap/model-s.webp" alt="使用 HAP升級雙效抗敏牙膏嘅女士" loading="lazy" decoding="async"></div>
+
+    <div class="hx-hero__text">
+      <h2 class="hx-hero__title" id="home-hap-h" aria-label="琺瑯填補技術" data-split>琺瑯填補技術</h2>
+      <p class="hx-hero__sub">填補牙齒表面微細孔洞</p>
+      <div class="hx-ctrl">
+        <div class="hx-switch" role="tablist" aria-label="揀產品">
+          <span class="hx-switch__thumb"></span>
+          <button role="tab" aria-selected="true" data-p="w">亮白<small>WHITENING</small></button>
+          <button role="tab" aria-selected="false" data-p="s">抗敏<small>SENSITIVE</small></button>
+        </div>
+        <!-- 了解更多：跟住揀咗邊款，連去嗰款嘅產品頁 -->
+        <a class="hx-more" id="hapMore" href="products/hap-whitening.html" data-w="products/hap-whitening.html" data-s="products/hap-sensitive.html" data-source="home_hap_more">了解更多 →</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="quiz-band" aria-labelledby="quiz-band-h">
-  <div class="section-inner quiz-band-inner reveal">
-    <div>
-      <p class="eyebrow">唔知揀邊款？</p>
-      <h2 id="quiz-band-h">30 秒搵啱你嘅牙膏</h2>
-      <p>答幾條簡單問題，我哋按你嘅需要推薦最合適嘅產品組合。</p>
-    </div>
-    <a href="quiz/index.html" class="btn btn-lg btn-white"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.6 2.3c-.8.4-1.2 1-1.2 1.8v.5"/><circle cx="12" cy="16.9" r=".6" fill="currentColor"/></svg>開始測驗</a>
-  </div>
-</section>
+<!-- 30 秒測驗浮動掣：只限手機 -->
+<a href="quiz/index.html" class="quiz-fab" id="quizFab" data-source="fab_quiz" aria-label="30 秒揀牙膏測驗">
+  <span class="quiz-fab__tip" aria-hidden="true">30 秒搵啱你嘅牙膏 👉</span>
+  <span class="quiz-fab__btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.6 4C5.3 4 3.8 5.9 3.8 8.4c0 2.3 1 3.9 1.6 6.2.5 2.4.9 4.9 2.4 4.9 1.4 0 1.7-2 2.2-3.9.3-1 .8-1.6 1.7-1.6s1.4.6 1.7 1.6c.5 1.9.8 3.9 2.2 3.9 1.5 0 1.9-2.5 2.4-4.9.6-2.3 1.6-3.9 1.6-6.2C19.6 5.9 18.1 4 15.8 4c-1.7 0-2.6.9-4.1.9S9.3 4 7.6 4z" fill="currentColor"/></svg><span class="quiz-fab__badge" aria-hidden="true">30s</span></span>
+</a>
+
 
 <section class="home-bundles" aria-labelledby="bundle-h">
   <div class="section-inner">
@@ -288,6 +305,6 @@
   </div>
   <div class="footer-teeth" aria-hidden="true"><img src="Assets/web/footer-teeth.svg" alt="" width="1120" height="195" loading="lazy"></div>
 </footer>
-<script src="js/tracking.js"></script><script src="js/main.js"></script>
+<script src="js/tracking.js"></script><script src="js/main.js"></script><script src="js/home-hap.js"></script>
 </body>
 </html>
